@@ -10,11 +10,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="w-screen h-screen overflow-hidden">
-      <body className="w-screen h-screen overflow-x-hidden overflow-y-scroll flex flex-col relative pt-[10vh]  bg-secondary">
+    <html lang="en" className="w-screen h-screen overflow-x-hidden overflow-y-scroll">
+      <body className="w-screen h-fit overflow-x-hidden flex flex-col relative bg-secondary">
         <ClientWrapper>
           <Header />
-          <main className="w-full h-fit flex flex-col">{children}</main>
+          <main className="w-full h-fit pt-[10vh] flex-shrink-0 flex flex-col">{children}</main>
           <Footer />
         </ClientWrapper>
       </body>

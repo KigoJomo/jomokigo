@@ -13,7 +13,9 @@ const ClientWrapper = ({ children }) => {
   };
 
   if (!showContent) {
-    return <Loader duration={duration} onLoadingComplete={handleLoadingComplete} />;
+    return <div className="w-full h-screen flex-col items-center justify-center">
+      <Loader duration={duration} onLoadingComplete={handleLoadingComplete} />
+    </div>;
   }
 
   return <>{children}</>;

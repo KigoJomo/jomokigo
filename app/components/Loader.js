@@ -29,8 +29,8 @@ const Loader = ({ duration, onLoadingComplete }) => {
           setTimeout(() => {
             loaderRef.current.classList.add('opacity-0')
             // Notify parent component that loading is complete after fade-out
-            setTimeout(() => onLoadingComplete(), 500) // 500ms for fade-out duration
-          }, 5000) // 1000ms delay before starting fade-out
+            setTimeout(() => onLoadingComplete(), 1000) // fade-out duration
+          }, 5000) // delay before starting fade-out
 
           return 100
         }

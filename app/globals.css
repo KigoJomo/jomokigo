@@ -107,3 +107,7 @@ html body main section {
   width: 100%;
   padding: 3rem;
 }
+
+.rotating-text {
+  transform: perspective(400px) rotateX(-60deg);
+}
