@@ -1,37 +1,100 @@
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 :root {
-  --primary: #EDE1D1;
+  --primary: #ede1d1;
   --secondary: #0e0e0e;
   --tertiary: #c4beb8;
-  --quaternary: #27394D;
+  --quaternary: #27394d;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
   color: var(--tertiary);
+  transition: all 0.5s ease;
 }
 
-.abril {
-  font-family: "Abril Fatface", serif;
+.cinzel {
+  font-family: "Cinzel Decorative", serif;
 }
 
-.monterrat {
-  font-family: "Montserrat", sans-serif;
+.lato {
+  font-family: "Lato", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Abril Fatface", serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel Decorative", serif;
   text-transform: capitalize;
 }
 
-h1, h2, h3, h4, h5, h6, a, button {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button {
   color: var(--primary);
+}
+
+@keyframes spinner-rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.spinner {
+  position: absolute;
+  z-index: 0;
+  border-radius: 0px;
+  overflow: hidden;
+  padding: 2rem;
+}
+.spinner::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: var(--secondary);
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(var(--primary), var(--primary)), linear-gradient(var(--secondary), var(--secondary)), linear-gradient(var(--secondary), var(--secondary)), linear-gradient(var(--secondary), var(--secondary));
+  animation: spinner-rotate 3s linear infinite;
+}
+.spinner::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 2px;
+  top: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background: var(--secondary);
+  border-radius: 4px;
+}
+
+.loaded::before {
+  background-position: center;
+  background-size: 100%;
+  animation-play-state: paused;
+}
+
+.fadeOutbottom {
+  opacity: 0;
+  transform: translateY(100%);
 }
 
 html body::-webkit-scrollbar {
