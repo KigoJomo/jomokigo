@@ -100,14 +100,39 @@ button {
   transform: translateY(100%);
 }
 
+html body {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
 html body::-webkit-scrollbar {
   display: none;
 }
-html body main section {
+html body section {
+  scroll-snap-align: start;
   width: 100%;
+  flex-shrink: 0;
   padding: 3rem;
 }
 
-.rotating-text {
-  transform: perspective(400px) rotateX(-60deg);
+.rotated-text {
+  transform: rotateX(-60deg);
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.animated {
+  animation: fadeOut 2s forwards;
+  animation-timeline: scroll();
+}
+
+.animated {
+  height: 300px;
+  width: 300px;
+  background-color: red;
 }

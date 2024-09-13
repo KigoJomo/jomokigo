@@ -67,7 +67,7 @@ const AnimatedText = ({ text, className = '' }) => {
   return (
     <h1
       ref={elementRef}
-      className={`text-[2.5rem] leading-10 md:text-[8rem] md:leading-4 text-center text-nowrap flex flex-nowrap ${className}`}
+      className={`text-[2.5rem] leading-10 md:text-[8rem] md:leading-4 lowercase text-center text-nowrap flex flex-nowrap ${className}`}
       style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
     >
       {letters}

@@ -110,21 +110,40 @@ button {
 
 html {
   body {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
     &::-webkit-scrollbar {
       display: none;
     }
-    main {
-      section {
-        width: 100%;
-        padding: 3rem;
-      }
+    section {
+      scroll-snap-align: start;
+      width: 100%;
+      flex-shrink: 0;
+      padding: 3rem;
     }
   }
 }
 
-
-
-
-.rotated-text{
+.rotated-text {
   transform: rotateX(-60deg);
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.animated {
+  animation: fadeOut 2s forwards;
+  animation-timeline: scroll();
+}
+
+.animated {
+  height: 300px;
+  width: 300px;
+  background-color: red;
 }
