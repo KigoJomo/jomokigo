@@ -58,10 +58,13 @@ const Loader = ({ duration, onLoadingComplete }) => {
             <span
               className={`w-[100%] h-8 border-2 border-b-0 border-primary`}
             ></span>
+
             <p className={`name text-[2rem] cinzel text-primary text-nowrap bg-secondary`}>jomo kigo</p>
+
             <p ref={sloganRef} className={`slogan opacity-0 duration-1000 text-xs tracking-widest lato text-primary w-[120%] text-center bg-secondary`}>
               Unwavering Creativity
             </p>
+            
             <span
               className={`w-[100%] h-8 border-2 border-t-0 border-primary`}
             ></span>
