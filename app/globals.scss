@@ -8,7 +8,8 @@
   --primary: #ede1d1;
   --secondary: #0e0e0e;
   --tertiary: #c4beb8;
-  --quaternary: #27394d;
+  --quaternary: #353738;
+  --transparent: #00000000;
 }
 
 * {
@@ -72,13 +73,15 @@ button {
     width: 200%;
     height: 200%;
     background-color: var(--secondary);
+    background: url('/images/gggrain.svg') center/cover no-repeat;
     background-repeat: no-repeat;
     background-size: 50% 50%, 50% 50%;
     background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-    background-image: linear-gradient(var(--primary), var(--primary)),
-      linear-gradient(var(--secondary), var(--secondary)),
-      linear-gradient(var(--secondary), var(--secondary)),
-      linear-gradient(var(--secondary), var(--secondary));
+    background-image: 
+      linear-gradient(var(--primary), var(--primary)),
+      linear-gradient(var(--transparent), var(--transparent)),
+      linear-gradient(var(--transparent), var(--transparent)),
+      linear-gradient(var(--transparent), var(--transparent));
     animation: spinner-rotate 3s linear infinite;
   }
 
@@ -91,6 +94,7 @@ button {
     width: calc(100% - 4px);
     height: calc(100% - 4px);
     background: var(--secondary);
+    background: url('/images/gggrain.svg') center/700% no-repeat;
     border-radius: 4px;
   }
 }
@@ -120,6 +124,7 @@ html {
       width: 100%;
       flex-shrink: 0;
       padding: 3rem;
+      background-color: var(--secondary);
     }
   }
 }
@@ -146,4 +151,15 @@ html {
   height: 300px;
   width: 300px;
   background-color: red;
+}
+
+.slide-text{
+  width: 100%;
+  *{
+    font-family: 'Cinzel Decorative', serif;
+    /* font-size: 1rem; */
+    text-wrap: nowrap;
+    text-align: center;
+    width: 100%;
+  }
 }

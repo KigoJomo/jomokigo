@@ -14,7 +14,7 @@ const ScrollScalingWrapper = ({ children }) => {
       wrapperRef.current,
       { scale: 0.25, transformOrigin: 'center center' }, // Initial scale
       {
-        scale: 1, // Full viewport scale
+        scale: 1.1, // Full viewport scale
         scrollTrigger: {
           trigger: wrapperRef.current,
           start: 'top bottom',
@@ -26,7 +26,7 @@ const ScrollScalingWrapper = ({ children }) => {
   }, []);
 
   return (
-    <div ref={wrapperRef} style={{ width: '100vw', height: '110vh', background: '#f0f0f0' }} className='flex flex-col items-center justify-center flex-shrink-0'>
+    <div ref={wrapperRef} style={{ width: '100vw', height: '100vh', background: '#f0f0f0' }} className='flex flex-col items-center justify-center flex-shrink-0'>
       {children}
     </div>
   );
