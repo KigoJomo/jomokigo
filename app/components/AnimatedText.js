@@ -53,21 +53,36 @@ const AnimatedText = ({ text, className = '' }) => {
   }, []) // Empty dependency array to avoid rerender loops
 
   // Split text into individual letters
-  const letters = text.split('').map((letter, index) => (
-    <span
-      key={index}
-      ref={(el) => (lettersRef.current[index] = el)} // Store reference to each letter
-      className="letter cinzel flex"
-      style={{ transformStyle: 'preserve-3d' }}
-    >
-      {letter}
-    </span>
-  ))
+  const letters = text.split('').map((letter, index) => {
+    if (letter === ' ') {
+      return (
+        <span
+          key={index}
+          ref={(el) => (lettersRef.current[index] = el)} // Store reference to each letter
+          className="letter cinzel flex"
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          &nbsp;
+        </span>
+      )
+    } else {
+      return (
+        <span
+          key={index}
+          ref={(el) => (lettersRef.current[index] = el)} // Store reference to each letter
+          className="letter cinzel flex"
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          {letter}
+        </span>
+      )
+    }
+  })
 
   return (
     <h1
       ref={elementRef}
-      className={`text-[2.5rem] leading-10 md:text-[8rem] md:leading-4 lowercase text-center text-nowrap flex flex-nowrap ${className}`}
+      className={`text-[2.5rem] leading-10 md:text-[8rem] md:leading-[8rem] lowercase text-center text-nowrap flex flex-nowrap ${className}`}
       style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
     >
       {letters}

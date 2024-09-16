@@ -40,6 +40,10 @@ h6 {
   text-transform: capitalize;
 }
 
+.uppercase span {
+  text-transform: uppercase;
+}
+
 h1,
 h2,
 h3,
@@ -49,6 +53,22 @@ h6,
 a,
 button {
   color: var(--primary);
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 @keyframes spinner-rotate {
@@ -106,16 +126,25 @@ button {
 html body {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  background: url("/images/gggrain.svg") center/cover no-repeat;
+  background-attachment: fixed;
 }
 html body::-webkit-scrollbar {
   display: none;
 }
 html body section {
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
   width: 100%;
+  height: 100vh;
   flex-shrink: 0;
   padding: 3rem;
-  background-color: var(--secondary);
+  padding-top: 12vh;
+}
+@media (max-width: 768px) {
+  html body section {
+    padding: 1rem;
+    padding-top: 12vh;
+  }
 }
 
 .rotated-text {

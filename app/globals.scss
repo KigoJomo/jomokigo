@@ -40,6 +40,12 @@ h6 {
   text-transform: capitalize;
 }
 
+.uppercase{
+  span{
+    text-transform: uppercase;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -49,6 +55,18 @@ h6,
 a,
 button {
   color: var(--primary);
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @keyframes spinner-rotate {
@@ -77,8 +95,7 @@ button {
     background-repeat: no-repeat;
     background-size: 50% 50%, 50% 50%;
     background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-    background-image: 
-      linear-gradient(var(--primary), var(--primary)),
+    background-image: linear-gradient(var(--primary), var(--primary)),
       linear-gradient(var(--transparent), var(--transparent)),
       linear-gradient(var(--transparent), var(--transparent)),
       linear-gradient(var(--transparent), var(--transparent));
@@ -119,12 +136,22 @@ html {
     &::-webkit-scrollbar {
       display: none;
     }
+    background: url('/images/gggrain.svg') center/cover no-repeat;
+    background-attachment: fixed;
+
     section {
-      scroll-snap-align: start;
+      /* scroll-snap-align: start; */
       width: 100%;
+      height: 100vh;
       flex-shrink: 0;
       padding: 3rem;
-      background-color: var(--secondary);
+      padding-top: 12vh;
+    }
+    @media (max-width: 768px) {
+      section {
+        padding: 1rem;
+        padding-top: 12vh;
+      }
     }
   }
 }
@@ -153,9 +180,9 @@ html {
   background-color: red;
 }
 
-.slide-text{
+.slide-text {
   width: 100%;
-  *{
+  * {
     font-family: 'Cinzel Decorative', serif;
     /* font-size: 1rem; */
     text-wrap: nowrap;
