@@ -4,7 +4,7 @@ import React from 'react'
 
 const ScrollAnimationWrapper = ({
   children,
-  variant = 'fadeIn',
+  variant = 'slideInBottom',
   className,
   duration = 1,
   onClick,

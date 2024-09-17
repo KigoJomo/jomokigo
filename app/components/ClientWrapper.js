@@ -6,7 +6,7 @@ import Loader from './Loader';
 
 const ClientWrapper = ({ children }) => {
   const [showContent, setShowContent] = useState(false);
-  const duration = 10; // Main loading duration - 10000
+  const duration = 10000; // Main loading duration - 10000
 
   const handleLoadingComplete = () => {
     setShowContent(true);

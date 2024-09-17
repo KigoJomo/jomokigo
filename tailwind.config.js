@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "var(--primary)",
+        ash: "var(--ash)",
         secondary: "var(--secondary)",
         tertiary: "var(--tertiary)",
         quaternary: "var(--quaternary)",

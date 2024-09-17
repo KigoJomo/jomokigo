@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
 
-const AnimatedText = ({ text, className = '' }) => {
+const AnimatedText = ({ text, smaller = false, className = '' }) => {
   const [positionPercentage, setPositionPercentage] = useState(null)
   const elementRef = useRef(null)
   const lettersRef = useRef([]) // To hold references to individual letter elements
@@ -82,7 +82,7 @@ const AnimatedText = ({ text, className = '' }) => {
   return (
     <h1
       ref={elementRef}
-      className={`text-[2.5rem] md:text-[5rem] lowercase text-center text-nowrap flex flex-nowrap ${className}`}
+      className={`${smaller? 'text-[1.5rem] md:text-[2rem]' : 'text-[2.5rem] md:text-[5rem]'}  lowercase text-center text-nowrap flex flex-nowrap ${className}`}
       style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
     >
       {letters}

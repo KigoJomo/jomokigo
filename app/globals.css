@@ -4,6 +4,7 @@
 @tailwind utilities;
 :root {
   --primary: #ede1d1;
+  --ash: #afadab;
   --secondary: #0e0e0e;
   --tertiary: #c4beb8;
   --quaternary: #353738;
@@ -56,6 +57,10 @@ h6,
 a,
 button {
   color: var(--primary);
+}
+
+p {
+  color: var(--ash);
 }
 
 img {
