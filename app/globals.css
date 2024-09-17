@@ -25,6 +25,9 @@
 .cinzel {
   font-family: "Cinzel Decorative", serif;
 }
+.cinzel * {
+  font-family: "Cinzel Decorative", serif;
+}
 
 .lato {
   font-family: "Lato", sans-serif;
@@ -110,6 +113,10 @@ img {
   background: var(--secondary);
   background: url("/images/gggrain.svg") center/700% no-repeat;
   border-radius: 4px;
+}
+
+.spin {
+  animation: spinner-rotate 10s linear infinite;
 }
 
 .loaded::before {
