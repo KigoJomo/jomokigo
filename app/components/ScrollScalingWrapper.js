@@ -5,16 +5,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ScrollScalingWrapper = ({ children }) => {
+const ScrollScalingWrapper = ({ children, className }) => {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
     // Animate scaling as user scrolls
     gsap.fromTo(
       wrapperRef.current,
-      { scale: 0.25, transformOrigin: 'center center' }, // Initial scale
+      { scale: 0.25, backgroundSize: '300%', transformOrigin: 'center center' }, // Initial scale
       {
         scale: 1.1, // Full viewport scale
+        backgroundSize: '100%',
         scrollTrigger: {
           trigger: wrapperRef.current,
           start: 'top bottom',
@@ -26,9 +27,9 @@ const ScrollScalingWrapper = ({ children }) => {
   }, []);
 
   return (
-    <div ref={wrapperRef} style={{ width: '100vw', height: '100vh', background: '#f0f0f0' }} className='flex flex-col items-center justify-center flex-shrink-0'>
+    <section ref={wrapperRef} style={{ width: '100vw', height: '105vh' }} className={`flex-shrink-0 ${className}`}>
       {children}
-    </div>
+    </section>
   );
 };
 

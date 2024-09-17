@@ -34,7 +34,7 @@ const Uncharted = () => {
         </ScrollAnimationWrapper>
 
         <ScrollAnimationWrapper duration={2.5}>
-          <p className="text-center">The magic of timeless, creative design</p>
+          <p className="text-center">The magic of timeless of creative design</p>
         </ScrollAnimationWrapper>
 
         <ScrollAnimationWrapper variant='fadeIn' duration={2.5} className="h-12 w-[1px] bg-primary md:"></ScrollAnimationWrapper>

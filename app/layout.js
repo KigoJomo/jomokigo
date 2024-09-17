@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="w-screen h-screen overflow-x-hidden overflow-y-scroll relative">
-      <body className="w-screen h-fit overflow-x-hidden overflow-y-scroll flex flex-col relative bg-secondary">
+      <body className="w-screen h-fit overflow-x-hidden overflow-y-scroll flex flex-col gap-32 relative bg-secondary">
         <ClientWrapper>
           <Header />
           {children}
