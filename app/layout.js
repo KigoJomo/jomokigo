@@ -1,23 +1,16 @@
-import Footer from './components/Footer'
-import Header from './components/Header'
-import './globals.css'
-import ClientWrapper from './components/ClientWrapper'
+import "./globals.css";
 
 export const metadata = {
-  title: 'Unwavering Creativity',
-  description: 'Delve into the world of a creative mind.',
-}
+  title: "Jomo Kigo | Software Engineer",
+  description: "Jomo Kigo is a software engineer based in Nyeri, Kenya.",
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="w-screen h-screen overflow-x-hidden overflow-y-scroll relative">
-      <body className="w-screen h-fit overflow-x-hidden overflow-y-scroll flex flex-col gap-32 relative bg-secondary">
-        <ClientWrapper>
-          <Header />
-          {children}
-          <Footer />
-        </ClientWrapper>
+    <html lang="en">
+      <body>
+        {children}
       </body>
     </html>
-  )
+  );
 }
