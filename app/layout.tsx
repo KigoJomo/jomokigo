@@ -3,8 +3,8 @@ import "./globals.css";
 import Header from "./components/Header";
 
 export const metadata: Metadata = {
-  title: "Jomo Kigo | Software Engineer",
-  description: "Meet Jomo Kigo, a software engineer",
+  title: "Jomo Kigo | Software Developer",
+  description: "Meet Jomo Kigo, a software developer",
 };
 
 export default function RootLayout({

@@ -61,7 +61,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className="w-screen sticky top-0 z-20 px-4 md:px-8 flex items-center justify-between md:backdrop-blur-xl">
+    <header className="w-screen sticky top-0 z-20 px-4 md:px-8 flex items-center justify-between bg-background">
       <Link href="/" className="logo py-2">
         <Image
           src="/images/logo.png"
@@ -83,7 +83,7 @@ const Header: React.FC = () => {
       <nav
         className={`absolute md:static z-[19] md:z-20 left-0 w-full md:w-fit h-screen md:h-fit ${
           menuOpen ? 'top-full opacity-100' : '-top-[100vh] opacity-0 md:opacity-100'
-        } transition-opacity duration-300 flex flex-col md:flex-row gap-0 md:gap-6 px-4 md:px-0 pt-16 md:py-0 backdrop-blur-3xl md:backdrop-blur-0`}>
+        } transition-opacity duration-300 flex flex-col md:flex-row gap-0 md:gap-6 px-4 md:px-0 pt-16 md:py-0 bg-background`}>
         {navPages.map((page) => {
           const Icon = iconMap[page.name]
 
