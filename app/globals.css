@@ -1,21 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --accent: #ede1d1;
+  --custom-gray: #1f1f1f;
+  --font-size: 1rem;
+  --font-ratio: 2;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (max-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-ratio: 1.5;
+    --font-size: 1.2rem;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", serif;
+  transition: all 0.3s ease;
+  color: var(--primary);
+}
 
-body {
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  color: var(--accent);
+}
+
+h1 {
+  font-size: calc(var(--font-size) * var(--font-ratio) * var(--font-ratio) * var(--font-ratio));
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: calc(var(--font-size) * var(--font-ratio) * var(--font-ratio));
+}
+
+h3 {
+  font-size: calc(var(--font-size) * var(--font-ratio));
+}
+
+h4 {
+  font-size: calc(var(--font-size));
+}
+
+p,
+li,
+label {
+  font-size: calc(var(--font-size) * 1);
+  opacity: 0.8;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--background);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: var(--accent-dark);
+  color: var(--background);
+}
+.btn:hover span {
+  color: var(--background);
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--background);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  background: var(--accent);
+  color: var(--background);
+}
+.btn-secondary:hover span {
+  color: var(--background);
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.tinted-bottom {
+  position: relative;
+}
+.tinted-bottom * {
+  position: relative;
+  z-index: 1;
+}
+.tinted-bottom::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  z-index: 0;
+}
+
+.image-tint::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, #0a0a0a, rgba(10, 10, 10, 0.8235294118), transparent, transparent);
+  z-index: 3;
+  pointer-events: none;
+}
+
+html body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+html body section {
+  width: 100vw;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  padding: 2rem 2rem;
+}
+@media (max-width: 768px) {
+  html body section {
+    padding: 1rem 1rem;
+  }
 }
