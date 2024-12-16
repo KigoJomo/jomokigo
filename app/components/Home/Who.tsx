@@ -11,7 +11,7 @@ const Point: React.FC<PointProps> = ({ text }) => {
   return (
     <div className="flex gap-4">
       <Sparkle size={24} className="flex-shrink-0 border p-1 rounded-full" />
-      <p>{text}</p>
+      <p className='text-sm'>{text}</p>
     </div>
   )
 }
@@ -23,13 +23,11 @@ const Who: React.FC = () => {
 
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
         <ScrollAnimationWrapper animationType="slideInBottom" delay={0.25}>
-            <p>
-            I&apos;m Jomo Kigo, a web developer passionate about creating
+            <p className=''>
+            I&apos;m Jomo Kigo, a software developer passionate about creating
             innovative and user-friendly digital solutions. I specialize in
             frontend and backend development, with experience in designing and
-            deploying professional websites. With a strong IT foundation from
-            Dedan Kimathi University of Technology, I bring critical thinking
-            and problem-solving to every project.
+            deploying professional websites.
             </p>
         </ScrollAnimationWrapper>
 

@@ -62,13 +62,13 @@ const Header: React.FC = () => {
 
   return (
     <header className="w-screen sticky top-0 z-20 px-4 md:px-8 flex items-center justify-between bg-background">
-      <Link href="/" className="logo py-2">
+      <Link href="/" className="logo py-4">
         <Image
           src="/images/logo.png"
           alt="jomo kigo logo"
           width={500}
           height={500}
-          className="object-contain w-20"
+          className="object-contain w-12"
         />
       </Link>
 
