@@ -10,6 +10,7 @@ interface ScrollAnimationWrapperProps {
   animationType?: AnimationType;
   className?: string;
   delay?: number;
+  threshHold?: number;
 }
 
 const animationVariants: Record<AnimationType, Variants> = {
@@ -50,13 +51,14 @@ const ScrollAnimationWrapper: React.FC<ScrollAnimationWrapperProps> = ({
   children, 
   animationType = 'fadeIn', 
   className = '',
-  delay = 0
+  delay = 0,
+  threshHold = 0.5
 }) => {
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.75 }}
+      viewport={{ once: false, amount: threshHold }}
       variants={animationVariants[animationType]}
       className={className}
       transition={{ delay }}

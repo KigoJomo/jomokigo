@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="w-screen h-screen overflow-hidden">
-      <body className="w-screen h-screen overflow-x-hidden overflow-y-scroll scrollbar-hidden flex flex-col">
+    <html lang="en" className="w-screen h-screen overflow-x-hidden overflow-y-scroll scrollbar-hidden">
+      <body className="w-screen h-fit flex flex-col">
         <Header />
         {children}
       </body>

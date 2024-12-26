@@ -198,21 +198,20 @@ img {
           clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
 }
 
-html {
-  background: url("/images/nnnoise.svg") center/cover no-repeat;
-}
 html body {
   color: var(--foreground);
+  background: url("/images/nnnoise.svg") center/cover repeat;
   font-family: Arial, Helvetica, sans-serif;
 }
 html body section {
   width: 100vw;
   overflow-x: hidden;
-  flex-shrink: 0;
+  overflow-y: visible;
+  flex-shrink: 0 !important;
   padding: 6rem 2rem;
 }
 @media (max-width: 768px) {
   html body section {
-    padding: 4rem 1rem;
+    padding: 2.5rem 1rem;
   }
 }

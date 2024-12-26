@@ -11,24 +11,24 @@ const Point: React.FC<PointProps> = ({ text }) => {
   return (
     <div className="flex gap-4">
       <Sparkle size={24} className="flex-shrink-0 border p-1 rounded-full" />
-      <p className='text-sm'>{text}</p>
+      <p className="text-sm">{text}</p>
     </div>
   )
 }
 
 const Who: React.FC = () => {
   return (
-    <section className="flex flex-col gap-6">
-      <h2>about me ...</h2>
+    <section className="overflow-y-visible flex flex-col gap-6">
+      <h2>about me...</h2>
 
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
         <ScrollAnimationWrapper animationType="slideInBottom" delay={0.25}>
-            <p className=''>
+          <p className="">
             I&apos;m Jomo Kigo, a software developer passionate about creating
             innovative and user-friendly digital solutions. I specialize in
             frontend and backend development, with experience in designing and
             deploying professional websites.
-            </p>
+          </p>
         </ScrollAnimationWrapper>
 
         <ScrollAnimationWrapper animationType="slideInBottom" delay={0.75}>

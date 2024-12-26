@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
 import ScrollAnimationWrapper from '../ScrollAnimationWrapper'
+import Button from '../Button'
 
 interface ProjectCardProps {
   index: number
   title: string
   description: string
   imageUrl: string
+  link: string
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({
@@ -14,9 +16,10 @@ const ProjectCard: FC<ProjectCardProps> = ({
   title,
   description,
   imageUrl,
+  link
 }) => {
   return (
-    <ScrollAnimationWrapper animationType="slideInBottom">
+    <ScrollAnimationWrapper animationType="slideInBottom" threshHold={0.2}>
       <div
         className={`w-full flex gap-6 md:gap-24 md:items-center border-t ${
           index === 3 && 'border-b'
@@ -36,6 +39,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
           <div className={`w-full md:w-1/2 flex flex-col gap-2 order-2`}>
             <h3 className="uppercase">{title}</h3>
             <p className="text-xs lg:text-base">{description}</p>
+            <Button link href={link} target='_blank' text='visit' secondary />
           </div>
         </div>
       </div>

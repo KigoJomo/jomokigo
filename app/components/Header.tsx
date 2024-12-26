@@ -94,7 +94,7 @@ const Header: React.FC = () => {
               className="flex items-center gap-6 md:gap-0 border-y md:border-t-0 md:border-b-2 border-white/10 md:border-transparent md:hover:border-white py-6 md:py-2 px-2"
               onClick={toggleMenu}>
               {Icon && <Icon className="md:hidden" />}
-              <span className="uppercase">{page.name}</span>
+              <span className="uppercase text-sm">{page.name}</span>
             </Link>
           )
         })}
