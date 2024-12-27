@@ -176,7 +176,7 @@ const Ongoing: FC = () => {
         </p>
       </ScrollAnimationWrapper>
 
-      <div className="carousel w-full aspect-[3/4] md:aspect-[3/1] overflow relative hidden md:grid grid-cols-1 grid-rows-1">
+      <ScrollAnimationWrapper animationType='slideInBottom' className="carousel w-full aspect-[3/4] md:aspect-[3/1] overflow relative hidden md:grid grid-cols-1 grid-rows-1">
         {projects.map((project, index) => (
           <CarouselItem
             key={index}
@@ -199,7 +199,7 @@ const Ongoing: FC = () => {
           onClick={() => handleNext()}>
           <ChevronRight />
         </button>
-      </div>
+      </ScrollAnimationWrapper>
 
       <div className="accordion w-full flex md:hidden flex-col gap-4">
         {projects.map((project, index) => (

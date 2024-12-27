@@ -19,7 +19,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   link
 }) => {
   return (
-    <ScrollAnimationWrapper animationType="slideInBottom" threshHold={0.2}>
+    <ScrollAnimationWrapper animationType="scaleIn" threshHold={0.2}>
       <div
         className={`w-full flex gap-6 md:gap-24 md:items-center border-t ${
           index === 3 && 'border-b'

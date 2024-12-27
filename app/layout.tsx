@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Jomo Kigo | Software Developer",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className="w-screen h-fit flex flex-col">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

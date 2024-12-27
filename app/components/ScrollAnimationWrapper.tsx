@@ -3,7 +3,7 @@
 import React, { ReactNode } from 'react';
 import { motion, Variants } from 'framer-motion';
 
-type AnimationType = 'fadeIn' | 'slideInBottom' | 'slideInLeft' | 'slideInRight';
+type AnimationType = 'fadeIn' | 'slideInBottom' | 'slideInLeft' | 'slideInRight' | 'scaleIn';
 
 interface ScrollAnimationWrapperProps {
   children: ReactNode;
@@ -42,6 +42,13 @@ const animationVariants: Record<AnimationType, Variants> = {
     visible: { 
       opacity: 1, 
       x: 0,
+      transition: { duration: 0.6 }
+    }
+  },
+  scaleIn: {
+    hidden: { scale: 0.75 },
+    visible: { 
+      scale: 1,
       transition: { duration: 0.6 }
     }
   }

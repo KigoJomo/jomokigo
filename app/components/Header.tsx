@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 
 interface NavPage {
@@ -32,10 +33,6 @@ const iconMap: IconMapping = {
 
 const navPages: NavPage[] = [
   {
-    name: 'home',
-    path: '/',
-  },
-  {
     name: 'about',
     path: '/about',
   },
@@ -55,6 +52,7 @@ const navPages: NavPage[] = [
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathName = usePathname()
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
@@ -91,7 +89,7 @@ const Header: React.FC = () => {
             <Link
               key={page.path}
               href={page.path}
-              className="flex items-center gap-6 md:gap-0 border-y md:border-t-0 md:border-b-2 border-white/10 md:border-transparent md:hover:border-white py-6 md:py-2 px-2"
+              className={`flex items-center gap-6 md:gap-0 border-y md:border-t-0 md:border-b-2 border-white/10 md:border-transparent md:hover:border-white ${pathName.match(page.path) && 'md:border-white'} py-6 md:py-2 px-2`}
               onClick={toggleMenu}>
               {Icon && <Icon className="md:hidden" />}
               <span className="uppercase text-sm">{page.name}</span>

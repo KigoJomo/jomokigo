@@ -1,4 +1,4 @@
-// import 
+import ScrollAnimationWrapper from "../ScrollAnimationWrapper"
 
 interface Stat{
   number: string
@@ -22,7 +22,7 @@ const stats: Stat[] =[
 
 const Stats: React.FC = () =>{
   return (
-    <div className="w-4/5 md:w-3/4 h-32 flex-shrink-0 -mt-16 z-[10] mx-auto bg-custom-gray flex items-center justify-evenly gap-4 sliced-border">
+    <ScrollAnimationWrapper animationType="scaleIn" className="w-4/5 md:w-3/4 h-32 flex-shrink-0 -mt-16 z-[10] mx-auto bg-custom-gray flex items-center justify-evenly gap-4 sliced-border">
       
       {stats.map((stat, index) => (
         <div key={index} className="text-center">
@@ -31,7 +31,7 @@ const Stats: React.FC = () =>{
         </div>
       ))}
 
-    </div>
+    </ScrollAnimationWrapper>
   )
 }
 

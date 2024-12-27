@@ -1,6 +1,7 @@
 'use client'
 import { ChevronDown } from 'lucide-react'
 import React, { FC, useState } from 'react'
+import ScrollAnimationWrapper from '../ScrollAnimationWrapper'
 
 const services = [
   {
@@ -30,12 +31,12 @@ interface ServiceProps {
 
 const Service: FC<ServiceProps> = ({ title, description, index }) => {
   return (
-    <div className="flex flex-col gap-4">
+    <ScrollAnimationWrapper delay={index * 0.5} animationType='slideInBottom' className="flex flex-col gap-4">
       <p className="md:text-2xl">(0{index})</p>
       <hr />
       <h3 className="">{title}</h3>
       <p className="text-sm md:text-base">{description}</p>
-    </div>
+    </ScrollAnimationWrapper>
   )
 }
 
@@ -48,7 +49,7 @@ const AccordionItem: FC<ServiceProps> = ({
 }) => {
   return (
     <div
-      className={`w-full border-b py-1 flex flex-col ${
+      className={`w-full bg-custom-gray p-4 flex flex-col ${
         open ? 'gap-4' : 'gap-0'
       }`}>
       <button className="w-full flex items-center gap-4" onClick={onClick}>
@@ -78,7 +79,9 @@ const Services: FC = () => {
 
   return (
     <section className="flex flex-col gap-8">
-      <h2 className="">my expertise...</h2>
+      <ScrollAnimationWrapper>
+        <h2 className="">my expertise...</h2>
+      </ScrollAnimationWrapper>
 
       <div className="hidden md:grid gap-32 grid-cols-3">
         {services.map((service, index) => (
@@ -86,7 +89,7 @@ const Services: FC = () => {
         ))}
       </div>
 
-      <div className="accordion grid md:hidden grid-cols-1 gap-6">
+      <div className="accordion grid md:hidden grid-cols-1 gap-4">
         {services.map((service, index) => (
           <AccordionItem
             key={index}
