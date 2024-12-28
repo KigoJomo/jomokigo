@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC, useRef } from 'react'
-import Button from './Button'
+import Button from '@/components/Button'
 import { Github, Linkedin, Send } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 
