@@ -124,7 +124,7 @@ const Footer: FC = () => {
         <Button text="let's start your project" link href='/contact' onClick={onClick} ref={buttonRef} className='order-3' />
       </div>
 
-      <hr className='mt-8' />
+      <hr className='mt-8 opacity-20' />
 
       <div className="w-full md:w-2/5 mt-8 md:mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
         {NavPages.map((page, index) => (

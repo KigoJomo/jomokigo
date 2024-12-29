@@ -1,6 +1,6 @@
 'use client'
 import { ChevronDown } from 'lucide-react'
-import React, { FC, useState } from 'react'
+import React, { FC, useReducer } from 'react'
 import ScrollAnimationWrapper from '../ScrollAnimationWrapper'
 
 const services = [
@@ -29,16 +29,17 @@ interface ServiceProps {
   onClick?: () => void
 }
 
-const Service: FC<ServiceProps> = ({ title, description, index }) => {
-  return (
-    <ScrollAnimationWrapper delay={index * 0.5} animationType='slideInBottom' className="flex flex-col gap-4">
-      <p className="md:text-2xl">(0{index})</p>
-      <hr />
-      <h3 className="">{title}</h3>
-      <p className="text-sm md:text-base">{description}</p>
-    </ScrollAnimationWrapper>
-  )
-}
+const Service: FC<ServiceProps> = ({ title, description, index }) => (
+  <ScrollAnimationWrapper
+    delay={index * 0.5}
+    animationType="slideInBottom"
+    className="flex flex-col gap-4">
+    <p className="md:text-2xl">(0{index})</p>
+    <hr />
+    <h3>{title}</h3>
+    <p className="text-sm md:text-base">{description}</p>
+  </ScrollAnimationWrapper>
+)
 
 const AccordionItem: FC<ServiceProps> = ({
   title,
@@ -47,35 +48,39 @@ const AccordionItem: FC<ServiceProps> = ({
   open,
   onClick,
 }) => {
+  const contentClass = open
+    ? 'opacity-100 h-fit'
+    : 'opacity-0 h-0 overflow-hidden'
+
   return (
     <div
-      className={`w-full bg-custom-gray p-4 flex flex-col ${
-        open ? 'gap-4' : 'gap-0'
-      }`}>
-      <button className="w-full flex items-center gap-4" onClick={onClick}>
+      className={`w-full bg-custom-gray p-4 flex flex-col gap-${open ? 4 : 0}`}>
+      <button
+        className="w-full flex items-center gap-4"
+        onClick={onClick}
+        aria-expanded={open}
+        aria-controls={`accordion-item-${index}`}>
         <p className="md:text-2xl">(0{index})</p>
         <h4 className="uppercase">{title}</h4>
-        <ChevronDown className={`${open ? 'rotate-180' : ''} ml-auto`} />
+        <ChevronDown
+          className={`ml-auto transition-transform ${open ? 'rotate-180' : ''}`}
+        />
       </button>
-
       <div
-        className={`${open ? 'opacity-100 h-fit' : 'p-0 gap-0 h-0 opacity-0'}`}>
+        id={`accordion-item-${index}`}
+        className={`transition-all ${contentClass}`}>
         <p className="text-sm md:text-base">{description}</p>
       </div>
     </div>
   )
 }
 
-const Services: FC = () => {
-  const [openItem, setOpenItem] = useState<number | null>(0)
+type Action = { type: 'toggle'; index: number }
+const reducer = (state: number | null, action: Action): number | null =>
+  state === action.index ? null : action.index
 
-  const handleToggle = (index: number) => {
-    if (index === openItem) {
-      setOpenItem(null)
-    } else {
-      setOpenItem(index)
-    }
-  }
+const Services: FC = () => {
+  const [openItem, dispatch] = useReducer(reducer, null)
 
   return (
     <section className="flex flex-col gap-8">
@@ -84,19 +89,25 @@ const Services: FC = () => {
       </ScrollAnimationWrapper>
 
       <div className="hidden md:grid gap-32 grid-cols-3">
-        {services.map((service, index) => (
-          <Service key={index} {...service} index={index + 1} />
+        {services.map(({ title, description }, index) => (
+          <Service
+            key={index}
+            title={title}
+            description={description}
+            index={index + 1}
+          />
         ))}
       </div>
 
       <div className="accordion grid md:hidden grid-cols-1 gap-4">
-        {services.map((service, index) => (
+        {services.map(({ title, description }, index) => (
           <AccordionItem
             key={index}
-            {...service}
+            title={title}
+            description={description}
             index={index + 1}
-            onClick={() => handleToggle(index)}
             open={openItem === index}
+            onClick={() => dispatch({ type: 'toggle', index })}
           />
         ))}
       </div>

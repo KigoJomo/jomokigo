@@ -4,7 +4,7 @@ import React from 'react'
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-background overflow-x-hidden flex flex-col items-center gap-6 relative pt-6 pb-24">
+    <section className="bg-background flex flex-col items-center gap-6 relative pt-6 pb-24">
       <div className="flex flex-col items-center justify-end md:justify-center gap-0 md:gap-6 h-[50vh] md:h-[70vh] flex-shrink-0">
         <h1 className="z-[5] md:z-[1] md:text-[14rem] md:leading-[12rem] lowercase select-none mix-blend-exclusion">
           software
@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
 
       <div className="absolute z-[2] h-[50vh] md:h-[70vh] w-auto object-contain image-tint overflow-hidden hover:*:scale-105">
         <Image
-          src="/images/hero.png"
+          src="/images/hero.webp"
           alt="jomo kigo"
           width={1000}
           height={1000}

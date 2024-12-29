@@ -236,8 +236,8 @@ html {
 
     section {
       width: 100vw;
-      overflow-x: hidden;
-      overflow-y: visible;
+      height: fit-content;
+      overflow: hidden;
       flex-shrink: 0 !important;
       padding: 6rem 2rem;
     }

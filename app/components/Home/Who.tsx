@@ -1,7 +1,7 @@
-import { Sparkle } from 'lucide-react'
-import Image from 'next/image'
+import { CheckCheck } from 'lucide-react'
 import React from 'react'
 import ScrollAnimationWrapper from '../ScrollAnimationWrapper'
+import ImageCarousel from './ImageCarousel'
 
 interface PointProps {
   text: string
@@ -10,43 +10,51 @@ interface PointProps {
 const Point: React.FC<PointProps> = ({ text }) => {
   return (
     <div className="flex gap-4">
-      <Sparkle size={24} className="flex-shrink-0 border p-1 rounded-full" />
-      <p className="text-sm">{text}</p>
+      <CheckCheck size={24} className="flex-shrink-0" />
+      <p className="text-sm md:text-base">{text}</p>
     </div>
   )
 }
 
+const points = [
+  'I thrive on creativity and problem-solving, always seeking fresh ways to approach challenges.',
+  'When I’m not coding, I enjoy deep conversations, sketching out ideas, or diving into topics that inspire me.',
+  'I value continuous learning and believe in the power of collaboration to bring out the best in any project.',
+]
+
+const images = [
+  '/images/carousel-1.webp',
+  '/images/carousel-2.webp',
+  '/images/carousel-3.webp',
+]
+
 const Who: React.FC = () => {
   return (
-    <section className="overflow-y-visible flex flex-col gap-6">
+    <section className="flex flex-col gap-6">
       <h2>about me...</h2>
 
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
         <ScrollAnimationWrapper animationType="slideInBottom" delay={0.25}>
           <p className="">
-            I&apos;m Jomo Kigo, a software developer passionate about creating
-            innovative and user-friendly digital solutions. I specialize in
-            frontend and backend development, with experience in designing and
-            deploying professional websites.
+            I’m Jomo Kigo, a software developer with a passion for creating and
+            problem-solving. Beyond coding, I’m a curious and creative
+            individual who enjoys exploring new ideas, tackling challenges, and
+            finding innovative ways to bring concepts to life. <br /> <br /> My
+            journey isn’t just about work—it’s about connecting with people,
+            learning every step of the way, and making a positive impact
+            wherever I can.
           </p>
         </ScrollAnimationWrapper>
 
-        <ScrollAnimationWrapper animationType="slideInBottom" delay={0.75}>
-          <Image
-            src={'/images/nova.webp'}
-            alt="jomo kigo software developer"
-            width={1000}
-            height={1000}
-            className="w-full aspect-square image-clip-bottom"
-          />
-        </ScrollAnimationWrapper>
+        <ImageCarousel images={images} className='w-full aspect-square image-clip-bottom' />
 
-        <ScrollAnimationWrapper animationType="slideInBottom" delay={1.5}>
-          <div className="w-full flex flex-col gap-6">
-            <Point text="Successfully developed and deployed a professional website for Consol Cargo, integrating ZohoMail to enhance client communication and operational efficiency." />
-            <Point text="Redesigned and modernized the Broadband Communication Networks website, achieving a responsive, user-friendly platform that aligns with the company’s vision." />
-            <Point text="Created an art gallery platform using Next.js, TailwindCSS, and Wix CMS, featuring dynamic artwork displays and e-commerce functionality." />
-          </div>
+        <ScrollAnimationWrapper
+          animationType="slideInBottom"
+          delay={1.5}
+          className="w-full flex flex-col gap-6">
+          {points.map((point, index) => (
+            <Point key={index} text={point} />
+          ))}
         </ScrollAnimationWrapper>
       </div>
     </section>
