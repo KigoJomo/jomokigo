@@ -35,8 +35,6 @@ const Hero: React.FC = () => {
 
 export default Hero
 
-//
-
 const SideText: React.FC = () => {
   return (
     <div className="absolute z-[5] right-4 left-auto md:right-auto md:left-8 opacity-30 flex flex-col items-center gap-4">
@@ -49,7 +47,7 @@ const SideText: React.FC = () => {
       <p
         className="rotate-180 text-sm uppercase"
         style={{ writingMode: 'vertical-lr' }}>
-          2024
+          2025
         </p>
     </div>
   )

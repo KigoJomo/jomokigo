@@ -36,7 +36,7 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
 
     const classes = `${className} ${
       secondary
-        ? 'border-transparent hover:border-b-foreground px-2'
+        ? 'border-transparent px-0 hover:border-b-foreground hover:px-2'
         : 'border-foreground hover:text-background hover:bg-foreground rounded-full px-6'
     } flex items-center gap-2 border py-1 w-fit capitalize`
 

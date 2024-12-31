@@ -28,14 +28,16 @@ const ProjectCard: FC<ProjectCardProps> = ({
       <div className="w-1/12 md:w-fit md:text-2xl opacity-60">(0{index})</div>
 
       <div className="w-10/12 md:w-2/3 flex flex-col md:flex-row items-center md:gap-24">
+        <h4 className='mr-auto mb-4 uppercase lato md:hidden'>{title}</h4>
+
         <ImageCarousel
           images={images}
-          className={`w-full md:w-1/2 aspect-video object-contain`}
+          className={`w-full md:w-1/2 aspect-video`}
         />
 
         <div className={`w-full md:w-1/2 flex flex-col gap-2`}>
-          <h3 className="uppercase">{title}</h3>
-          <p className="text-xs lg:text-base">{description}</p>
+          <h3 className="uppercase hidden md:flex">{title}</h3>
+          <p className="text-sm lg:text-base">{description}</p>
           <Button link href={link} target="_blank" text="visit" secondary />
         </div>
       </div>
