@@ -48,7 +48,7 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
         onClick={handleClick}
         ref={ref as React.Ref<HTMLAnchorElement>} // Specify the ref type explicitly for <Link>
       >
-        <p>{text}</p>
+        <p className='text-nowrap'>{text}</p>
         <ArrowUpRight size={18} />
       </Link>
     ) : (
@@ -57,7 +57,7 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
         onClick={handleClick}
         ref={ref as React.Ref<HTMLButtonElement>} // Specify the ref type explicitly for <button>
       >
-        <p>{text}</p>
+        <p className='text-nowrap'>{text}</p>
         <ArrowUpRight size={18} />
       </button>
     )

@@ -22,10 +22,10 @@ const stats: Stat[] =[
 
 const Stats: React.FC = () =>{
   return (
-    <ScrollAnimationWrapper animationType="scaleIn" className="w-4/5 md:w-3/4 h-32 flex-shrink-0 -mt-16 z-[10] mx-auto bg-custom-gray flex items-center justify-evenly gap-4">
+    <ScrollAnimationWrapper animationType="scaleIn" className="w-[90%] md:w-1/2 h-32 flex-shrink-0 mx-auto flex items-center justify-evenly gap-0 z-[10] -mt-16">
       
       {stats.map((stat, index) => (
-        <div key={index} className="text-center px-4">
+        <div key={index} className="h-full w-full flex flex-col items-center justify-center text-center px-4 bg-custom-gray z-[10]">
           <p className="text-2xl md:text-5xl abril">{stat.number}</p>
           <p className="capitalize text-xs">{stat.title}</p>
         </div>

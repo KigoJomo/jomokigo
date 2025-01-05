@@ -19,7 +19,7 @@ const Hero: FC = () => {
     },
     {
       title: 'profession',
-      buttonText: 'How I make the world a better place',
+      buttonText: "How I'm changing the world",
       href: '#',
       content: [
         'I specialize in building user-friendly web applications using React and Next.js.',
@@ -31,12 +31,12 @@ const Hero: FC = () => {
   ]
 
   return (
-    <section className="relative md:py-6 pr-16">
+    <section className="relative md:py-6 pr-8 md:pr-16">
       <SideText />
 
-      <div className="w-full aspect-[2.25/1] grid grid-cols-3 grid-rows-4 gap-4">
+      <div className="w-full aspect-[2.25/1] grid grid-cols-1 md:grid-cols-3 md:grid-rows-4 gap-4">
         {/* Left Image */}
-        <div className="col-span-1 row-span-4 flex items-center justify-center">
+        <div className="md:col-span-1 md:row-span-4 flex items-center justify-center">
           <Image
             src="/images/cool.webp"
             alt="about jomo kigo"
@@ -46,17 +46,15 @@ const Hero: FC = () => {
           />
         </div>
 
-        {/* Dynamic Hero Sections */}
-        {heroSections.map((section, index) => (
-          <HeroSection key={index} {...section} />
-        ))}
-
-        {/* Bottom Title */}
-        <div className="col-span-2 row-span-1 p-0 flex flex-col justify-end gap-4">
+        <div className="md:col-span-2 md:row-span-1 p-0 flex flex-col justify-end gap-4">
           <h1 className="italic lowercase md:text-[11rem] md:leading-[9rem] text-nowrap opacity-20">
             about me
           </h1>
         </div>
+
+        {heroSections.map((section, index) => (
+          <HeroSection key={index} {...section} />
+        ))}
       </div>
     </section>
   )
@@ -78,7 +76,7 @@ const HeroSection: FC<HeroSectionProps> = ({
   return (
     <div className="bg-background border border-white/10 col-span-1 row-span-3 p-6 flex flex-col items-center justify-center gap-0 group">
       <h2 className="italic lowercase">{title}</h2>
-      <Button text={buttonText} link secondary href={href} />
+      <Button text={buttonText} link secondary href={href} className='scale-75 md:scale-100 mb-4 md:m-0' />
 
       <div className="border border-transparent w-full h-0 opacity-0 group-hover:h-full group-hover:opacity-100 transition-all duration-300 flex flex-col gap-2 justify-end">
         {content.map((text, index) => (
@@ -93,7 +91,7 @@ const HeroSection: FC<HeroSectionProps> = ({
 }
 
 const SideText: FC = () => (
-  <div className="absolute z-[5] right-4 md:right-8 top-1/2 translate-y-[-50%] flex flex-col items-center gap-4">
+  <div className="absolute z-[5] right-1 md:right-8 top-1/2 translate-y-[-50%] flex flex-col items-center gap-4">
     <p
       className="uppercase text-sm rotate-180 opacity-30 hover:opacity-100"
       style={{ writingMode: 'vertical-lr' }}>

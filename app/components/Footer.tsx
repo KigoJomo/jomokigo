@@ -43,12 +43,12 @@ const SocialLink: FC<SocialLink> = ({ name, url, icon:Icon, iconProps})=>{
     <Link
       href={url}
       target='_blank'
-      className='flex flex-col items-center gap-2 border hover:border-transparent p-4 rounded-full relative group'
+      className='flex flex-col items-center gap-2 border hover:border-transparent transition-all p-4 rounded-full relative group'
       title={`Contact me on ${name}`}
     >
       <Icon {...mergedIconProps} />
 
-      <p className='text-sm absolute left-1/2 -translate-x-[50%] top-8 opacity-0 group-hover:top-full group-hover:opacity-100'>{name}</p>
+      <p className='text-sm absolute left-1/2 -translate-x-[50%] top-8 opacity-0 group-hover:top-full group-hover:opacity-100 transition-all'>{name}</p>
     </Link>
   )
 }

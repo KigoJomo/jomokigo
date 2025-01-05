@@ -16,8 +16,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="w-screen h-screen overflow-x-hidden overflow-y-scroll scrollbar-hidden">
-      <body className="w-screen h-fit flex flex-col">
+      className="scrollbar-hidden">
+      <body className="scrollbar-hidden">
         <Header />
         {children}
         <Footer />
