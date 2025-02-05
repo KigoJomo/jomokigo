@@ -13,6 +13,15 @@ export const metadata: Metadata = {
     title: 'Jomo Kigo | Full Stack Software Developer & Engineer',
     description: 'Professional software developer specializing in web development and modern software solutions',
     type: 'website',
+    images: "/images/opengraph-image.webp"
+  },
+  twitter: {
+    site: '@jomo_kigo',
+    card: 'summary_large_image',
+    title: 'Jomo Kigo | Full Stack Software Developer & Engineer',
+    description: 'Professional software developer specializing in web development and modern software solutions',
+    creator: '@jomo_kigo',
+    images: '/images/opengraph-image.webp',
   }
 }
 
